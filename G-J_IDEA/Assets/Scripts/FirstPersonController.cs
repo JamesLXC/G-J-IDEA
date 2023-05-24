@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -39,6 +40,20 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField, Range(1, 10)] private float lookSpeedY = 2.0f;
     [SerializeField, Range(1, 180)] private float upperLookLimit = 80.0f;
     [SerializeField, Range(1, 80)] private float lowerLookLimit = 80.0f;
+
+    [Header("Health Parameters")]
+    [SerializeField] private float maxHealth = 100;
+    [SerializeField] private float timeBeforeRegenStarts = 3;
+    [SerializeField] private float healthvalueIncrement = 1;
+    [SerializeField] private float healthTimeIncrement = 0.1f;
+    private float currentHealth;
+    private Coroutine regenaratingHealth;
+    public static Action<float> OnTakeDamage;
+    public static Action<float> OnDamage;
+    public static Action<float> OnHeal;
+
+
+
 
     [Header("Jumping Parameters")]
     [SerializeField] private float jumpForce = 8.0f;
@@ -99,11 +114,21 @@ public class FirstPersonController : MonoBehaviour
 
     private Camera playerCamera;
     private CharacterController characterController;
-
     private Vector3 moveDirection;
     private Vector2 currentIput;
 
     private float roationX = 0;
+
+    private void OnEnable()
+    {
+        OnTakeDamage += ApplyDamage;
+    }
+
+    private void OnDisable()
+    {
+        OnTakeDamage -= ApplyDamage;
+
+    }
 
     void Awake()
     {
@@ -111,6 +136,7 @@ public class FirstPersonController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         defaultYPos = playerCamera.transform.localPosition.y;
         defaultFOV = playerCamera.fieldOfView;
+        currentHealth = maxHealth;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -247,6 +273,30 @@ public class FirstPersonController : MonoBehaviour
     }
 
 
+    private void ApplyDamage(float dmg)
+    {
+        currentHealth -= dmg;
+        OnDamage?.Invoke(currentHealth);
+
+        if(currentHealth <= 0)
+           KillPLayer();
+        else if (regenaratingHealth != null) 
+            StopCoroutine (regenaratingHealth);
+
+        regenaratingHealth = StartCoroutine(regenerateHealth());
+    }
+
+    private void KillPLayer()
+    {
+        currentHealth = 0;
+
+        if (regenaratingHealth != null)
+            StopCoroutine(regenaratingHealth);
+
+        print("Joey please jesus christ fuck");
+
+    }
+
     private void ApplyFinalMovements()
     {
         if (!characterController.isGrounded)
@@ -303,4 +353,24 @@ public class FirstPersonController : MonoBehaviour
         playerCamera.fieldOfView = targeFOV;
         zoomRoutine = null;
     }
+    private IEnumerator regenerateHealth()
+    {
+        yield return new WaitForSeconds(timeBeforeRegenStarts);
+        WaitForSeconds timeToWait = new WaitForSeconds(healthTimeIncrement);
+
+        while(currentHealth < maxHealth)
+        {
+            currentHealth += healthvalueIncrement;
+
+            if (currentHealth > maxHealth)
+                currentHealth = maxHealth;
+            
+            OnHeal?.Invoke(currentHealth);
+
+            yield return timeToWait;
+        }
+
+        regenaratingHealth = null;
+    }
+
 }
