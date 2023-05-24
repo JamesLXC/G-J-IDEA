@@ -14,8 +14,8 @@ public class FirstPersonController : MonoBehaviour
  [Header("look Parameters")]
  [SerializeField, Range (1,10)] private float lookSpeedX = 2.0f;
  [SerializeField, Range (1,10)] private float lookSpeedY = 2.0f;
- [SerializeField, Range (1,180)] private float upperLookLimitX = 80.0f;
- [SerializeField, Range (1,80)] private float lowerLookLimitY = 80.0f;
+ [SerializeField, Range (1,180)] private float upperLookLimit = 80.0f;
+ [SerializeField, Range (1,80)] private float lowerLookLimit = 80.0f;
 
  private Camera playerCamera;
  private CharacterController characterController;
@@ -57,12 +57,18 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleMOuseLook()
     {
-
+        roationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
+        roationX = Mathf.Clamp(roationX, -upperLookLimit, lowerLookLimit);
+        playerCamera.transform.localRotation = Quaternion.Euler(roationX, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
     }
 
 
     private void ApplyFinalMovements()
     {
+        if(!characterController.isGrounded)
+            moveDirection.y -= gravity * Time.deltaTime;
 
+        characterController.Move(moveDirection * Time.deltaTime);
     }
 }
