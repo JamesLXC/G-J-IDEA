@@ -17,12 +17,15 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool canUseHeadbob = true;
     [SerializeField] private bool willSlideOnSlopes = true;
     [SerializeField] private bool canZoom = true;
+    [SerializeField] private bool canInteract = true;
+
 
 
     [Header("Controls")]
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode CrouchKey = KeyCode.LeftControl;
+    [SerializeField] private KeyCode InteractKey = KeyCode.Mouse0;
     [SerializeField] private KeyCode zoomKey = KeyCode.Mouse1;
 
     [Header("Movement Parameters")]
@@ -45,7 +48,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float CrouchHeight = 0.5f;
     [SerializeField] private float StandingHeight = 2f;
     [SerializeField] private float TimeToCrouch = 0.25f;
-    [SerializeField] private Vector3 CrouchingCenter = new Vector3(0,0.5f,0);
+    [SerializeField] private Vector3 CrouchingCenter = new Vector3(0, 0.5f, 0);
     [SerializeField] private Vector3 StandingCenter = new Vector3(0, 0f, 0);
     private bool isCrouching;
     private bool duringCrouchingAnimation;
@@ -64,7 +67,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float TimeToZoom = 0.3f;
     [SerializeField] private float ZoomFOV = 30f;
     private float defaultFOV;
-    private Coroutine zoomRoutine; 
+    private Coroutine zoomRoutine;
 
     // Slider Prop
 
@@ -74,10 +77,10 @@ public class FirstPersonController : MonoBehaviour
     {
         get
         {
-            if(characterController.isGrounded && Physics.Raycast(transform.position, Vector3.down, out RaycastHit slopeHit, 2f))
+            if (characterController.isGrounded && Physics.Raycast(transform.position, Vector3.down, out RaycastHit slopeHit, 2f))
             {
                 hitPointNormal = slopeHit.normal;
-                return Vector3.Angle(hitPointNormal, Vector3.up) >  characterController.slopeLimit;
+                return Vector3.Angle(hitPointNormal, Vector3.up) > characterController.slopeLimit;
             }
             else
             {
@@ -85,6 +88,12 @@ public class FirstPersonController : MonoBehaviour
             }
         }
     }
+
+    [Header("Interaction")]
+    [SerializeField] private Vector3 interactionRayPoint = default;
+    [SerializeField] private float InteractionDistance = default;
+    [SerializeField] private LayerMask InteractionLayer = default;
+    private Interactable currentInteractable;
 
 
 
@@ -112,7 +121,7 @@ public class FirstPersonController : MonoBehaviour
         {
             HandleMovementInput();
             HandleMOuseLook();
-           
+
             if (canJump)
             {
                 HandleJump();
@@ -126,6 +135,13 @@ public class FirstPersonController : MonoBehaviour
             {
                 HandleHeadbob();
             }
+
+            if (canInteract)
+            {
+                HandleInteractCheck();
+                HandleInteractInput();
+            }
+
 
             if (canZoom)
                 HandleZoom();
@@ -181,7 +197,7 @@ public class FirstPersonController : MonoBehaviour
     {
         if (Input.GetKeyDown(zoomKey))
         {
-            if(zoomRoutine != null)
+            if (zoomRoutine != null)
             {
                 StopCoroutine(zoomRoutine);
                 zoomRoutine = null;
@@ -199,6 +215,34 @@ public class FirstPersonController : MonoBehaviour
 
             }
             zoomRoutine = StartCoroutine(ToggleZoom(false));
+        }
+    }
+
+
+    private void HandleInteractCheck()
+    {
+        if(Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit Hit, InteractionDistance))
+        {
+            if(Hit.collider.gameObject.layer == 7 && (currentInteractable == null || Hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID() ))
+            {
+                Hit.collider.TryGetComponent(out currentInteractable);
+
+                if (currentInteractable)
+                    currentInteractable.OnFocus();
+            }
+        }
+        else if (currentInteractable)
+        {
+            currentInteractable.OnLoseFocus();
+            currentInteractable = null;
+        }
+    }
+
+    private void HandleInteractInput()
+    {
+        if (Input.GetKeyDown(InteractKey) && currentInteractable != null && Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, InteractionDistance, InteractionLayer))
+        {
+            currentInteractable.Oninteract();
         }
     }
 
@@ -228,7 +272,7 @@ public class FirstPersonController : MonoBehaviour
 
         while (timeElapsed < TimeToCrouch) 
         {
-            characterController.height = Mathf.Lerp(currentHeight, targetHeight, timeElapsed/timeElapsed);
+            characterController.height = Mathf.Lerp(currentHeight, targetHeight, timeElapsed/TimeToCrouch);
             characterController.center = Vector3.Lerp(currentCenter, targetCenter, timeElapsed/TimeToCrouch);
             timeElapsed += Time.deltaTime;
             yield return null;
