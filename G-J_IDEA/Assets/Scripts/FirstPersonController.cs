@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class FirstPersonController : MonoBehaviour
@@ -8,7 +9,8 @@ public class FirstPersonController : MonoBehaviour
     public bool CanMove { get; private set; } = true;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
-    private bool ShouldCrouch => Input.GetKeyDown(CrouchKey) && !duringCrouchingAnimation; // && characterController.isGrounded;
+    private bool ShouldCrouch => Input.GetKeyDown(CrouchKey) && !duringCrouchingAnimation;
+    private bool ShouldHeal => Input.GetKeyDown(healKey) && characterController.isGrounded;
 
 
     [Header("Functional Options")]
@@ -19,7 +21,8 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool willSlideOnSlopes = true;
     [SerializeField] private bool canZoom = true;
     [SerializeField] private bool canInteract = true;
-    [SerializeField] private bool UseStam = true;
+    [SerializeField] private bool useStam = true;
+    [SerializeField] private bool canHeal = true;
 
 
 
@@ -29,6 +32,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private KeyCode CrouchKey = KeyCode.LeftControl;
     [SerializeField] private KeyCode InteractKey = KeyCode.Mouse0;
     [SerializeField] private KeyCode zoomKey = KeyCode.Mouse1;
+    [SerializeField] private KeyCode healKey = KeyCode.F;
 
     [Header("Movement Parameters")]
     [SerializeField] private float walkSpeed = 3.0f;
@@ -44,14 +48,17 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Health Parameters")]
     [SerializeField] private float maxHealth = 100;
-    [SerializeField] private float timeBeforeRegenStarts = 3;
-    [SerializeField] private float healthvalueIncrement = 1;
-    [SerializeField] private float healthTimeIncrement = 0.1f;
     private float currentHealth;
-    private Coroutine regenaratingHealth;
     public static Action<float> OnTakeDamage;
     public static Action<float> OnDamage;
     public static Action<float> OnHeal;
+
+    [Header("Medkit Parameters")]
+    [SerializeField] private float medkitMax = 3;
+    [SerializeField] private float medkitHealAmount = 35;
+    private float currentMedkit;
+    public static Action<float> pickUpMedkit;
+
 
     [Header("Stamina Parameters")]
     [SerializeField] private float maxStam = 100;
@@ -61,13 +68,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float stamTimeIncrement = 0.1f;
     private float currentStam;
     private Coroutine regeneratingStam;
-
-     
-
-
-
-
-
 
     [Header("Jumping Parameters")]
     [SerializeField] private float jumpForce = 8.0f;
@@ -136,13 +136,16 @@ public class FirstPersonController : MonoBehaviour
     private void OnEnable()
     {
         OnTakeDamage += ApplyDamage;
+        pickUpMedkit += GetMedkit; 
     }
 
     private void OnDisable()
     {
         OnTakeDamage -= ApplyDamage;
-
+        pickUpMedkit -= GetMedkit;
     }
+
+
 
     void Awake()
     {
@@ -185,11 +188,15 @@ public class FirstPersonController : MonoBehaviour
 
 
             if (canZoom)
+            {
                 HandleZoom();
-
-
-            if (UseStam)
+            }
+                
+            if (useStam)
                 HandleStam();
+
+            if (canHeal)
+                HandleHeal();
 
             ApplyFinalMovements();
         }
@@ -281,6 +288,7 @@ public class FirstPersonController : MonoBehaviour
 
         if (Input.GetKeyUp(zoomKey))
         {
+            
             if (zoomRoutine != null)
             {
                 StopCoroutine(zoomRoutine);
@@ -291,7 +299,25 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    private void HandleHeal()
+    {
+        if (Input.GetKeyDown(healKey))
+        {
 
+            if (currentMedkit > 0)
+            {
+                print("Healed");
+                currentMedkit -= 1;
+                currentHealth += medkitHealAmount;
+            }
+            else
+                print("No Meds");
+
+
+            if (currentHealth >= maxHealth)
+                currentHealth = maxHealth;
+        }
+    }
     private void HandleInteractCheck()
     {
         if(Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit Hit, InteractionDistance))
@@ -323,25 +349,24 @@ public class FirstPersonController : MonoBehaviour
     private void ApplyDamage(float dmg)
     {
         currentHealth -= dmg;
-        OnDamage?.Invoke(currentHealth);
 
         if(currentHealth <= 0)
            KillPLayer();
-        else if (regenaratingHealth != null) 
-            StopCoroutine (regenaratingHealth);
-
-        regenaratingHealth = StartCoroutine(regenerateHealth());
     }
 
+    private void GetMedkit(float medkitAmount)
+    {
+        if (currentMedkit >= medkitMax)
+            return;
+        currentMedkit += medkitAmount;
+    }
     private void KillPLayer()
     {
         currentHealth = 0;
 
-        if (regenaratingHealth != null)
-            StopCoroutine(regenaratingHealth);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         print("Joey please jesus christ fuck");
-
     }
 
     private void ApplyFinalMovements()
@@ -386,6 +411,7 @@ public class FirstPersonController : MonoBehaviour
 
     private IEnumerator ToggleZoom(bool isEnter)
     {
+        
         float targeFOV = isEnter ? ZoomFOV : defaultFOV;
         float startingFOV = playerCamera.fieldOfView;
         float timeElapsed = 0;
@@ -400,25 +426,7 @@ public class FirstPersonController : MonoBehaviour
         playerCamera.fieldOfView = targeFOV;
         zoomRoutine = null;
     }
-    private IEnumerator regenerateHealth()
-    {
-        yield return new WaitForSeconds(timeBeforeRegenStarts);
-        WaitForSeconds timeToWait = new WaitForSeconds(healthTimeIncrement);
 
-        while(currentHealth < maxHealth)
-        {
-            currentHealth += healthvalueIncrement;
-
-            if (currentHealth > maxHealth)
-                currentHealth = maxHealth;
-            
-            OnHeal?.Invoke(currentHealth);
-
-            yield return timeToWait;
-        }
-
-        regenaratingHealth = null;
-    }
     
     private IEnumerator regenStam()
     {
