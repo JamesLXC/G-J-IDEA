@@ -23,6 +23,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool canInteract = true;
     [SerializeField] private bool useStam = true;
     [SerializeField] private bool canHeal = true;
+    [SerializeField] private bool useFootsteps = true;
 
 
 
@@ -39,6 +40,20 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float sprintSpeed = 6.0f;
     [SerializeField] private float CrouchSpeed = 1.5f;
     [SerializeField] private float SlopeSpeed = 8f;
+
+    [Header("Footstep Parameters")]
+    [SerializeField] private float baseStepSpeed = 0.5f;
+    [SerializeField] private float crouchStepMulti = 1.5f;
+    [SerializeField] private float sprintStepMulti = 0.6f;
+    [SerializeField] private AudioSource footStepAudioSource = default;
+    [SerializeField] private AudioClip[] defaultClips = default;
+    [SerializeField] private AudioClip[] woodClips = default;
+    [SerializeField] private AudioClip[] gravelClips = default;
+    [SerializeField] private AudioClip[] tileClips = default;
+    private float footstepTimer = 0;
+    private float getCurrentoffset => isCrouching ? baseStepSpeed * crouchStepMulti : IsSprinting ? baseStepSpeed * sprintStepMulti : baseStepSpeed;
+
+
 
     [Header("look Parameters")]
     [SerializeField, Range(1, 10)] private float lookSpeedX = 2.0f;
@@ -186,6 +201,8 @@ public class FirstPersonController : MonoBehaviour
                 HandleInteractInput();
             }
 
+            if (useFootsteps)
+                HandleFootsteps();
 
             if (canZoom)
             {
@@ -301,22 +318,23 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleHeal()
     {
-        if (Input.GetKeyDown(healKey))
+        if (Input.GetKeyDown(healKey) )
         {
 
-            if (currentMedkit > 0)
+            if (currentMedkit > 0 && currentHealth < maxHealth)
             {
                 print("Healed");
                 currentMedkit -= 1;
                 currentHealth += medkitHealAmount;
             }
             else
-                print("No Meds");
-
-
+                print("No Meds or no health to heal");
             if (currentHealth >= maxHealth)
                 currentHealth = maxHealth;
+            
         }
+        
+
     }
     private void HandleInteractCheck()
     {
@@ -379,6 +397,44 @@ public class FirstPersonController : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
     }
+
+    private void HandleFootsteps()
+    {
+        if (!characterController.isGrounded) return;
+        if (currentIput == Vector2.zero) return;
+
+        footstepTimer -= Time.deltaTime;
+
+        if(footstepTimer <= 0)
+        {
+            
+            int layerMask = (-1) - (1 << LayerMask.NameToLayer("Player"));
+            if (Physics.Raycast(playerCamera.transform.position, Vector3.down, out RaycastHit hit, 3, layerMask))
+            {
+                switch(hit.collider.tag)
+                {
+                    case "Footsteps/Wood":
+                        footStepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);
+                        break;
+                    case "Footsteps/Tile":
+                        footStepAudioSource.PlayOneShot(tileClips[UnityEngine.Random.Range(0, tileClips.Length - 1)]);
+                        break;
+                    case "Footsteps/Gravel":
+                        footStepAudioSource.PlayOneShot(gravelClips[UnityEngine.Random.Range(0, gravelClips.Length - 1)]);
+                        break;
+                    default:
+                        footStepAudioSource.PlayOneShot(defaultClips[UnityEngine.Random.Range(0, defaultClips.Length - 1)]);
+                        break;
+
+
+                }
+ 
+            }
+
+            footstepTimer = getCurrentoffset; 
+        }
+    }
+
     private IEnumerator CrouchStand()
     {
         if(isCrouching && Physics.Raycast(playerCamera.transform.position, Vector3.up, 1f))
