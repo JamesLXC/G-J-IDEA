@@ -87,8 +87,10 @@ public class FirstPersonController : MonoBehaviour
     [Header("Jumping Parameters")]
     [SerializeField] private float jumpForce = 8.0f;
     [SerializeField] private float gravity = 30.0f;
+    [SerializeField] private float jumpTimer = 0.5f;
   //  [SerializeField, Range(1, 100)] private float jumpVolumeValue = 0;
     [SerializeField] private AudioSource jumpSoundSource = default;
+
 
     [Header("Crouch Parameters")]
     [SerializeField] private float CrouchHeight = 0.5f;
@@ -115,8 +117,6 @@ public class FirstPersonController : MonoBehaviour
     private float defaultFOV;
     private Coroutine zoomRoutine;
 
-    // Slider Prop
-
     private Vector3 hitPointNormal;
 
     private bool IsSliding
@@ -134,6 +134,7 @@ public class FirstPersonController : MonoBehaviour
             }
         }
     }
+
 
     [Header("Interaction")]
     [SerializeField] private Vector3 interactionRayPoint = default;
@@ -191,8 +192,7 @@ public class FirstPersonController : MonoBehaviour
             
             if (canUseHeadbob)
                 HandleHeadbob();
-            
-
+           
             if (canInteract)
             {
                 HandleInteractCheck();
@@ -261,6 +261,9 @@ public class FirstPersonController : MonoBehaviour
             }
 
             moveDirection.y = jumpForce;
+
+            StartCoroutine (LandingRoutine());
+
         }
     }
     private void HandleCrouch()
@@ -283,6 +286,8 @@ public class FirstPersonController : MonoBehaviour
         }
 
     }
+
+
     private void HandleStam() 
     {
     if(IsSprinting && currentIput != Vector2.zero) 
@@ -451,6 +456,19 @@ public class FirstPersonController : MonoBehaviour
 
             footstepTimer = getCurrentoffset; 
         }
+    }
+
+
+    private IEnumerator LandingRoutine()
+    {
+        yield return new WaitForSeconds(jumpTimer);
+
+        do
+        {
+            print("jumping");
+        }
+        while (!characterController.isGrounded);
+
     }
 
     private IEnumerator CrouchStand()

@@ -816,7 +816,7 @@ MonoBehaviour:
   timeBeforeStamRegenStarts: 5
   stamValueIncrement: 2
   stamTimeIncrement: 0.1
-  jumpForce: 8
+  jumpForce: 16
   gravity: 30
   jumpSoundSource: {fileID: 841418983}
   CrouchHeight: 0.5
