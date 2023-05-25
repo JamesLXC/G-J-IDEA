@@ -5,13 +5,18 @@ using UnityEngine;
 
 public class MedkitPickup : Interactable
 {
-    [SerializeField] private bool emptyBox = false;
-    [SerializeField] private int maxItemsLeft = 3;
+    [Header("Medkit Container Settings")] 
+    [SerializeField] private int maxItems = 3;
+    [SerializeField] private int minItems = 1;
     private int currentItemsLeft;
+#pragma warning disable
+    private bool emptyBox = false;
+#pragma warning restore
+
 
     void Awake()
     {
-     currentItemsLeft = (UnityEngine.Random.Range(0, maxItemsLeft));
+     currentItemsLeft = (UnityEngine.Random.Range(minItems, maxItems));
     }
     public override void OnFocus()
     {
@@ -32,7 +37,6 @@ public class MedkitPickup : Interactable
             emptyBox = true;
             print("Box is Empty");
         }
-   
     }
 
     public override void OnLoseFocus()
