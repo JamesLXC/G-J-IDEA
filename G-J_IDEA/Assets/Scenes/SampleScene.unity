@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -818,6 +818,7 @@ MonoBehaviour:
   stamTimeIncrement: 0.1
   jumpForce: 8
   gravity: 30
+  jumpSoundSource: {fileID: 841418983}
   CrouchHeight: 0.5
   StandingHeight: 2
   TimeToCrouch: 0.25
@@ -848,7 +849,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.025
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0

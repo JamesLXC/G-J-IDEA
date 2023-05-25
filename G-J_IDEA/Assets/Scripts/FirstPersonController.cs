@@ -24,7 +24,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool useStam = true;
     [SerializeField] private bool canHeal = true;
     [SerializeField] private bool useFootsteps = true;
-
+   
 
 
     [Header("Controls")]
@@ -40,11 +40,12 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float sprintSpeed = 6.0f;
     [SerializeField] private float CrouchSpeed = 1.5f;
     [SerializeField] private float SlopeSpeed = 8f;
-
+    
     [Header("Footstep Parameters")]
     [SerializeField] private float baseStepSpeed = 0.5f;
     [SerializeField] private float crouchStepMulti = 1.5f;
     [SerializeField] private float sprintStepMulti = 0.6f;
+ //   [SerializeField, Range(1, 100)] private float footstepVolumeValue = 0;
     [SerializeField] private AudioSource footStepAudioSource = default;
     [SerializeField] private AudioClip[] defaultClips = default;
     [SerializeField] private AudioClip[] woodClips = default;
@@ -52,7 +53,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private AudioClip[] tileClips = default;
     private float footstepTimer = 0;
     private float getCurrentoffset => isCrouching ? baseStepSpeed * crouchStepMulti : IsSprinting ? baseStepSpeed * sprintStepMulti : baseStepSpeed;
-
 
 
     [Header("look Parameters")]
@@ -87,6 +87,8 @@ public class FirstPersonController : MonoBehaviour
     [Header("Jumping Parameters")]
     [SerializeField] private float jumpForce = 8.0f;
     [SerializeField] private float gravity = 30.0f;
+  //  [SerializeField, Range(1, 100)] private float jumpVolumeValue = 0;
+    [SerializeField] private AudioSource jumpSoundSource = default;
 
     [Header("Crouch Parameters")]
     [SerializeField] private float CrouchHeight = 0.5f;
@@ -182,18 +184,14 @@ public class FirstPersonController : MonoBehaviour
             HandleMOuseLook();
 
             if (canJump)
-            {
                 HandleJump();
-            }
 
             if (canCrouch)
-            {
                 HandleCrouch();
-            }
+            
             if (canUseHeadbob)
-            {
                 HandleHeadbob();
-            }
+            
 
             if (canInteract)
             {
@@ -205,9 +203,8 @@ public class FirstPersonController : MonoBehaviour
                 HandleFootsteps();
 
             if (canZoom)
-            {
                 HandleZoom();
-            }
+            
                 
             if (useStam)
                 HandleStam();
@@ -240,7 +237,31 @@ public class FirstPersonController : MonoBehaviour
     private void HandleJump()
     {
         if (ShouldJump)
+        {
+           // jumpSoundSource.volume = jumpVolumeValue;
+
+            int layerMask = (-1) - (1 << LayerMask.NameToLayer("Player"));
+            if (Physics.Raycast(playerCamera.transform.position, Vector3.down, out RaycastHit hit, 3, layerMask))
+            {
+                switch (hit.collider.tag)
+                {
+                    case "Footsteps/Wood":
+                        jumpSoundSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);
+                        break;
+                    case "Footsteps/Tile":
+                        jumpSoundSource.PlayOneShot(tileClips[UnityEngine.Random.Range(0, tileClips.Length - 1)]);
+                        break;
+                    case "Footsteps/Gravel":
+                        jumpSoundSource.PlayOneShot(gravelClips[UnityEngine.Random.Range(0, gravelClips.Length - 1)]);
+                        break;
+                    default:
+                        jumpSoundSource.PlayOneShot(defaultClips[UnityEngine.Random.Range(0, defaultClips.Length - 1)]);
+                        break;
+                }
+            }
+
             moveDirection.y = jumpForce;
+        }
     }
     private void HandleCrouch()
     {
@@ -266,7 +287,6 @@ public class FirstPersonController : MonoBehaviour
     {
     if(IsSprinting && currentIput != Vector2.zero) 
         {
-         // gets here
             if (regeneratingStam != null)
             {
                 StopCoroutine(regeneratingStam);
@@ -400,6 +420,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleFootsteps()
     {
+    //    footStepAudioSource.volume = footstepVolumeValue;
         if (!characterController.isGrounded) return;
         if (currentIput == Vector2.zero) return;
 
@@ -425,10 +446,7 @@ public class FirstPersonController : MonoBehaviour
                     default:
                         footStepAudioSource.PlayOneShot(defaultClips[UnityEngine.Random.Range(0, defaultClips.Length - 1)]);
                         break;
-
-
                 }
- 
             }
 
             footstepTimer = getCurrentoffset; 
