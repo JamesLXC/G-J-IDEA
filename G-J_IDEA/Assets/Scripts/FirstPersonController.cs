@@ -88,8 +88,10 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float jumpForce = 8.0f;
     [SerializeField] private float gravity = 30.0f;
     [SerializeField] private float jumpTimer = 0.5f;
-  //  [SerializeField, Range(1, 100)] private float jumpVolumeValue = 0;
-    [SerializeField] private AudioSource jumpSoundSource = default;
+
+    
+
+   
 
 
     [Header("Crouch Parameters")]
@@ -238,27 +240,9 @@ public class FirstPersonController : MonoBehaviour
     {
         if (ShouldJump)
         {
-           // jumpSoundSource.volume = jumpVolumeValue;
+            // jumpSoundSource.volume = jumpVolumeValue;
 
-            int layerMask = (-1) - (1 << LayerMask.NameToLayer("Player"));
-            if (Physics.Raycast(playerCamera.transform.position, Vector3.down, out RaycastHit hit, 3, layerMask))
-            {
-                switch (hit.collider.tag)
-                {
-                    case "Footsteps/Wood":
-                        jumpSoundSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);
-                        break;
-                    case "Footsteps/Tile":
-                        jumpSoundSource.PlayOneShot(tileClips[UnityEngine.Random.Range(0, tileClips.Length - 1)]);
-                        break;
-                    case "Footsteps/Gravel":
-                        jumpSoundSource.PlayOneShot(gravelClips[UnityEngine.Random.Range(0, gravelClips.Length - 1)]);
-                        break;
-                    default:
-                        jumpSoundSource.PlayOneShot(defaultClips[UnityEngine.Random.Range(0, defaultClips.Length - 1)]);
-                        break;
-                }
-            }
+            StartCoroutine(FloorSound());
 
             moveDirection.y = jumpForce;
 
@@ -433,11 +417,37 @@ public class FirstPersonController : MonoBehaviour
 
         if(footstepTimer <= 0)
         {
-            
+
+            StartCoroutine(FloorSound());
+
+            footstepTimer = getCurrentoffset; 
+        }
+    }
+
+
+    private IEnumerator LandingRoutine()
+    {
+        yield return new WaitForSeconds(jumpTimer);
+
+        while (!characterController.isGrounded)
+        {
+           yield return null;
+
+            StartCoroutine(FloorSound());
+        }
+    
+    
+    }
+
+    private IEnumerator FloorSound()
+    {
+        if (characterController.isGrounded)
+        {
+
             int layerMask = (-1) - (1 << LayerMask.NameToLayer("Player"));
             if (Physics.Raycast(playerCamera.transform.position, Vector3.down, out RaycastHit hit, 3, layerMask))
             {
-                switch(hit.collider.tag)
+                switch (hit.collider.tag)
                 {
                     case "Footsteps/Wood":
                         footStepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);
@@ -452,24 +462,13 @@ public class FirstPersonController : MonoBehaviour
                         footStepAudioSource.PlayOneShot(defaultClips[UnityEngine.Random.Range(0, defaultClips.Length - 1)]);
                         break;
                 }
+             
+                yield return null;
             }
-
-            footstepTimer = getCurrentoffset; 
+ 
         }
     }
 
-
-    private IEnumerator LandingRoutine()
-    {
-        yield return new WaitForSeconds(jumpTimer);
-
-        do
-        {
-            print("jumping");
-        }
-        while (!characterController.isGrounded);
-
-    }
 
     private IEnumerator CrouchStand()
     {
