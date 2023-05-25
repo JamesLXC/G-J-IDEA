@@ -8,7 +8,7 @@ public class FirstPersonController : MonoBehaviour
     public bool CanMove { get; private set; } = true;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
-    private bool ShouldCrouch => Input.GetKeyDown(CrouchKey) && !duringCrouchingAnimation && characterController.isGrounded;
+    private bool ShouldCrouch => Input.GetKeyDown(CrouchKey) && !duringCrouchingAnimation; // && characterController.isGrounded;
 
 
     [Header("Functional Options")]
@@ -19,6 +19,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool willSlideOnSlopes = true;
     [SerializeField] private bool canZoom = true;
     [SerializeField] private bool canInteract = true;
+    [SerializeField] private bool UseStam = true;
 
 
 
@@ -51,6 +52,19 @@ public class FirstPersonController : MonoBehaviour
     public static Action<float> OnTakeDamage;
     public static Action<float> OnDamage;
     public static Action<float> OnHeal;
+
+    [Header("Stamina Parameters")]
+    [SerializeField] private float maxStam = 100;
+    [SerializeField] private float stamUseMultiplier = 5;
+    [SerializeField] private float timeBeforeStamRegenStarts = 5;
+    [SerializeField] private float stamValueIncrement = 2;
+    [SerializeField] private float stamTimeIncrement = 0.1f;
+    private float currentStam;
+    private Coroutine regeneratingStam;
+
+     
+
+
 
 
 
@@ -137,6 +151,7 @@ public class FirstPersonController : MonoBehaviour
         defaultYPos = playerCamera.transform.localPosition.y;
         defaultFOV = playerCamera.fieldOfView;
         currentHealth = maxHealth;
+        currentStam = maxStam;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -171,6 +186,10 @@ public class FirstPersonController : MonoBehaviour
 
             if (canZoom)
                 HandleZoom();
+
+
+            if (UseStam)
+                HandleStam();
 
             ApplyFinalMovements();
         }
@@ -217,7 +236,35 @@ public class FirstPersonController : MonoBehaviour
               defaultYPos + Mathf.Sin(timer) * (isCrouching ? CrouchBobAmount : IsSprinting ? SprintBobAmount : walkBobAmount),
               playerCamera.transform.localPosition.z);
         }
+
     }
+    private void HandleStam() 
+    {
+    if(IsSprinting && currentIput != Vector2.zero) 
+        {
+         // gets here
+            if (regeneratingStam != null)
+            {
+                StopCoroutine(regeneratingStam);
+                regeneratingStam = null;
+            }
+        currentStam -= stamUseMultiplier * Time.deltaTime;
+
+            if (currentStam < 0)
+                currentStam = 0;
+
+            if(currentStam <= 0)
+                canSprint = false;
+        
+        }
+        if (!IsSprinting && currentStam < maxStam && regeneratingStam == null)
+        {
+
+            regeneratingStam = StartCoroutine(regenStam());
+        }
+
+    }
+
 
     private void HandleZoom()
     {
@@ -372,5 +419,27 @@ public class FirstPersonController : MonoBehaviour
 
         regenaratingHealth = null;
     }
+    
+    private IEnumerator regenStam()
+    {
+        yield return new WaitForSeconds(timeBeforeStamRegenStarts);
+        WaitForSeconds timeToWait = new WaitForSeconds(stamTimeIncrement);
 
+        while (currentStam < maxStam)
+        {
+
+            if(currentStam > 0)
+                canSprint = true;
+
+            currentStam += stamValueIncrement;
+
+            if(currentStam > maxStam)
+                currentStam = maxStam;
+
+            yield return timeToWait;
+                
+        }
+    regeneratingStam = null;
+    
+    }
 }
