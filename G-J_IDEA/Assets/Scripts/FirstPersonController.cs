@@ -24,7 +24,8 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool useStam = true;
     [SerializeField] private bool canHeal = true;
     [SerializeField] private bool useFootsteps = true;
-   
+    [SerializeField] private bool isHealing = false;
+
 
 
     [Header("Controls")]
@@ -71,6 +72,11 @@ public class FirstPersonController : MonoBehaviour
     [Header("Medkit Parameters")]
     [SerializeField] private float medkitMax = 3;
     [SerializeField] private float medkitHealAmount = 35;
+    [SerializeField] private float healingLength = 3;
+    [SerializeField] private AudioSource healAudioSource = default;
+    [SerializeField] private AudioClip healClip = default;
+   
+    private float currentHealingTime;
     private float currentMedkit;
     public static Action<float> pickUpMedkit;
 
@@ -173,6 +179,7 @@ public class FirstPersonController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         defaultYPos = playerCamera.transform.localPosition.y;
         defaultFOV = playerCamera.fieldOfView;
+        healAudioSource.clip = healClip;
         currentHealth = maxHealth;
         currentStam = maxStam;
         Cursor.lockState = CursorLockMode.Locked;
@@ -210,6 +217,7 @@ public class FirstPersonController : MonoBehaviour
                 
             if (useStam)
                 HandleStam();
+
 
             if (canHeal)
                 HandleHeal();
@@ -327,22 +335,22 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleHeal()
     {
-        if (Input.GetKeyDown(healKey) )
+        if (Input.GetKeyDown(healKey) && currentMedkit > 0 && currentHealth < maxHealth)
         {
+            healAudioSource.Play();
+            canSprint = false;
+            isHealing = true;
+            StartCoroutine (HealRoutine());
 
-            if (currentMedkit > 0 && currentHealth < maxHealth)
-            {
-                print("Healed");
-                currentMedkit -= 1;
-                currentHealth += medkitHealAmount;
-            }
-            else
-                print("No Meds or no health to heal");
-            if (currentHealth >= maxHealth)
-                currentHealth = maxHealth;
-            
         }
-        
+        if (Input.GetKeyUp(healKey))
+        {
+            healAudioSource.Stop();
+            canSprint = true;
+            isHealing = false;
+
+            currentHealingTime = 0;
+        }
 
     }
     private void HandleInteractCheck()
@@ -518,7 +526,30 @@ public class FirstPersonController : MonoBehaviour
         zoomRoutine = null;
     }
 
-    
+    private IEnumerator HealRoutine()
+    {
+        currentHealingTime = Time.time;
+        while (isHealing)
+        {
+            if(Time.time - currentHealingTime >= healingLength)
+            {
+                canSprint = true;
+                print("Healed");
+                currentMedkit--;
+                currentHealth += medkitHealAmount;
+                isHealing = false;
+                currentHealingTime = 0;
+                healAudioSource.Stop();
+                if (currentHealth >= maxHealth)
+                    currentHealth = maxHealth;
+            }
+            yield return null;
+        }
+        
+     
+
+
+    }
     private IEnumerator regenStam()
     {
         yield return new WaitForSeconds(timeBeforeStamRegenStarts);
@@ -539,6 +570,5 @@ public class FirstPersonController : MonoBehaviour
                 
         }
     regeneratingStam = null;
-    
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -706,6 +706,7 @@ MonoBehaviour:
   useStam: 1
   canHeal: 1
   useFootsteps: 1
+  isHealing: 0
   sprintKey: 304
   jumpKey: 32
   CrouchKey: 306
@@ -811,14 +812,17 @@ MonoBehaviour:
   maxHealth: 100
   medkitMax: 3
   medkitHealAmount: 35
+  healingLength: 3
+  healAudioSource: {fileID: 841418983}
+  healClip: {fileID: 8300000, guid: e4fe79f3409500642aca2730c35e83a8, type: 3}
   maxStam: 100
   stamUseMultiplier: 5
   timeBeforeStamRegenStarts: 5
   stamValueIncrement: 2
   stamTimeIncrement: 0.1
-  jumpForce: 16
+  jumpForce: 8
   gravity: 30
-  jumpSoundSource: {fileID: 841418983}
+  jumpTimer: 0.5
   CrouchHeight: 0.5
   StandingHeight: 2
   TimeToCrouch: 0.25
