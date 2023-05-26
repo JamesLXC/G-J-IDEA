@@ -566,8 +566,7 @@ public class FirstPersonController : MonoBehaviour
             if(currentStam > maxStam)
                 currentStam = maxStam;
 
-            yield return timeToWait;
-                
+            yield return timeToWait;                
         }
     regeneratingStam = null;
     }

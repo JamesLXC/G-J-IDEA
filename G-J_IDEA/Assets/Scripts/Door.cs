@@ -4,39 +4,37 @@ using UnityEngine;
 
 public class Door : Interactable
 
-    
 {
     public Animator MedBoxAnim;
-    public bool isShut;
-
-    public void Start()
-    {
-        isShut = true;
-    }
+    [SerializeField] private bool isShut = true;
     public override void OnFocus()
     {
     }
-
     public override void Oninteract()
     {
-       if(isShut == true)
+        if (isShut)
         {
+            print("Opened " + gameObject.name);
             MedBoxAnim.SetBool("DoorOpen", true);
             isShut = false;
         }
-
-        if (isShut == false)
+        else
         {
+            print("Shut " + gameObject.name);
             MedBoxAnim.SetBool("DoorOpen", false);
             isShut = true;
-
-            
         }
-    }
+
+       // if (!isShut)
+       // {
+         
+       // }
+        
+    }      
 
     public override void OnLoseFocus()
     {
-    print("Stopped Kissing " + gameObject.name);
+   
     }
 
 

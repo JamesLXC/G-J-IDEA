@@ -19,5 +19,4 @@ public class Test : Interactable
         print("Stopped Kissing " + gameObject.name);
     }
 
-
 }

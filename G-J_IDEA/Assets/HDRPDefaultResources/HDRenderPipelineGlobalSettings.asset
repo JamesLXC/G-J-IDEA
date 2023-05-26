@@ -59,7 +59,7 @@ MonoBehaviour:
     sssCustomSampleBudget: 20
     msaaMode: 1
     materialQuality: 0
-  m_RenderPipelineResources: {fileID: 0}
+  m_RenderPipelineResources: {fileID: 11400000, guid: 3ce144cff5783da45aa5d4fdc2da14b7, type: 2}
   m_RenderPipelineRayTracingResources: {fileID: 0}
   beforeTransparentCustomPostProcesses: []
   beforePostProcessCustomPostProcesses: []
@@ -84,7 +84,9 @@ MonoBehaviour:
   decalLayerName7: Decal Layer 7
   shaderVariantLogLevel: 0
   lensAttenuationMode: 0
-  diffusionProfileSettingsList: []
+  diffusionProfileSettingsList:
+  - {fileID: 11400000, guid: fd8a7b89ece96ae4fb8c714a4fbc2ffa, type: 2}
+  - {fileID: 11400000, guid: d07b32a80ec1a85418ba78f4ef0f40bf, type: 2}
   rendererListCulling: 0
   DLSSProjectId: 000000
   useDLSSCustomProjectId: 0
