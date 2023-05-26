@@ -110,12 +110,6 @@
         },
         {
             "m_Id": "13fc2158cf6e4e068952f82bbd53d778"
-        },
-        {
-            "m_Id": "746adce0e2d047a59793fdc686ecb195"
-        },
-        {
-            "m_Id": "95a45f20a8224b99b3e9aeaeb9ad303d"
         }
     ],
     "m_GroupDatas": [],
@@ -395,12 +389,6 @@
             },
             {
                 "m_Id": "13fc2158cf6e4e068952f82bbd53d778"
-            },
-            {
-                "m_Id": "746adce0e2d047a59793fdc686ecb195"
-            },
-            {
-                "m_Id": "95a45f20a8224b99b3e9aeaeb9ad303d"
             }
         ]
     },
@@ -541,12 +529,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.StackLitSubTarget",
-    "m_ObjectId": "061fd634c57a4157a8628dc90d5dbd30"
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.TangentMaterialSlot",
     "m_ObjectId": "0863fa56bf024731895524ee892cf35d",
     "m_Id": 0,
@@ -659,6 +641,18 @@
     "m_Property": {
         "m_Id": "dc0131a0d21d45d69c67d40363b6ec2d"
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.HDLitData",
+    "m_ObjectId": "0b09b12775564f22b83b13ad04ae42fc",
+    "m_RayTracing": false,
+    "m_MaterialType": 0,
+    "m_RefractionModel": 0,
+    "m_SSSTransmission": true,
+    "m_EnergyConservingSpecular": true,
+    "m_ClearCoat": false
 }
 
 {
@@ -1099,7 +1093,7 @@
     "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.HDTarget",
     "m_ObjectId": "2d6ce3bff5ef4d5dbaba8daba662c522",
     "m_ActiveSubTarget": {
-        "m_Id": "061fd634c57a4157a8628dc90d5dbd30"
+        "m_Id": "f26eb5cbe368492fbd53eaed3d5cf50f"
     },
     "m_Datas": [
         {
@@ -1112,7 +1106,7 @@
             "m_Id": "82a0043f67ef4b2182849d9e73e009a3"
         },
         {
-            "m_Id": "987c8bdeb56340aa90a4fc3700ec5387"
+            "m_Id": "0b09b12775564f22b83b13ad04ae42fc"
         }
     ],
     "m_CustomEditorGUI": "",
@@ -1620,39 +1614,6 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "746adce0e2d047a59793fdc686ecb195",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "SurfaceDescription.TangentTS",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "9d948d5695804e4da11c9a7371f28b68"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedDescriptor": "SurfaceDescription.TangentTS"
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "76d935140daa43ce8c2f21de78fa8554",
     "m_Group": {
         "m_Id": ""
@@ -1773,21 +1734,6 @@
         "z": 0.0,
         "w": 0.0
     },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "7e09dfe04ebf45c4a4f49823adfed4d3",
-    "m_Id": 0,
-    "m_DisplayName": "Dielectric IOR",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "DielectricIor",
-    "m_StageCapability": 2,
-    "m_Value": 1.5,
-    "m_DefaultValue": 1.5,
     "m_Labels": []
 }
 
@@ -2014,68 +1960,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "95a45f20a8224b99b3e9aeaeb9ad303d",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "SurfaceDescription.DielectricIor",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "7e09dfe04ebf45c4a4f49823adfed4d3"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedDescriptor": "SurfaceDescription.DielectricIor"
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.StackLitData",
-    "m_ObjectId": "987c8bdeb56340aa90a4fc3700ec5387",
-    "m_BaseParametrization": 0,
-    "m_DualSpecularLobeParametrization": 0,
-    "m_Anisotropy": false,
-    "m_Coat": false,
-    "m_CoatNormal": false,
-    "m_DualSpecularLobe": false,
-    "m_CapHazinessWrtMetallic": true,
-    "m_Iridescence": false,
-    "m_ScreenSpaceSpecularOcclusionBaseMode": 1,
-    "m_DataBasedSpecularOcclusionBaseMode": 0,
-    "m_ScreenSpaceSpecularOcclusionAOConeSize": 0,
-    "m_ScreenSpaceSpecularOcclusionAOConeDir": 0,
-    "m_DataBasedSpecularOcclusionAOConeSize": 2,
-    "m_SpecularOcclusionConeFixupMethod": 0,
-    "m_AnisotropyForAreaLights": true,
-    "m_RecomputeStackPerLight": false,
-    "m_HonorPerLightMinRoughness": false,
-    "m_ShadeBaseUsingRefractedAngles": false,
-    "m_Debug": false,
-    "m_DevMode": false,
-    "m_EnergyConservingSpecular": true,
-    "m_Transmission": false,
-    "m_SubsurfaceScattering": false
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "988f9c068cef402fbc031b9e325908df",
     "m_Group": {
@@ -2129,30 +2013,6 @@
     },
     "m_Labels": [],
     "m_Channel": 2
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.TangentMaterialSlot",
-    "m_ObjectId": "9d948d5695804e4da11c9a7371f28b68",
-    "m_Id": 0,
-    "m_DisplayName": "Tangent (Tangent Space)",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "TangentTS",
-    "m_StageCapability": 2,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_Labels": [],
-    "m_Space": 3
 }
 
 {
@@ -2679,7 +2539,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 18.389999389648439,
+    "m_Value": 17.100000381469728,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -2813,6 +2673,12 @@
         "z": 0.0,
         "w": 0.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.HDLitSubTarget",
+    "m_ObjectId": "f26eb5cbe368492fbd53eaed3d5cf50f"
 }
 
 {

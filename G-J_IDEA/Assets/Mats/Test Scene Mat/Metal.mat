@@ -16,12 +16,14 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2225
-  stringTagMap: {}
+  stringTagMap:
+    MotionVector: User
   disabledShaderPasses:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
+  - MOTIONVECTORS
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -100,14 +102,14 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 2
     - _Mode: 0
-    - _Multiply: 1
-    - _NoiseScale: 1
+    - _Multiply: 0.4
+    - _NoiseScale: 100.06
     - _OcclusionStrength: 1
     - _OpaqueCullMode: 2
     - _Parallax: 0.02
-    - _Power: 1
+    - _Power: 0.54
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
@@ -126,7 +128,7 @@ Material:
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 42
+    - _StencilWriteMaskMV: 40
     - _SupportDecals: 1
     - _SurfaceType: 0
     - _TransparentBackfaceEnable: 0
