@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -69,8 +70,14 @@ public class FirstPersonController : MonoBehaviour
     public static Action<float> OnDamage;
     public static Action<float> OnHeal;
 
+
+    [Header("Item Parameters")]
+     public static float itemsMax = 5;
+    public static float currentItems = 0;
+    public static Action<float> pickUpItemSize;
+
+
     [Header("Medkit Parameters")]
-    [SerializeField] private float medkitMax = 3;
     [SerializeField] private float medkitHealAmount = 35;
     [SerializeField] private float healingLength = 3;
     [SerializeField] private AudioSource healAudioSource = default;
@@ -162,13 +169,15 @@ public class FirstPersonController : MonoBehaviour
     private void OnEnable()
     {
         OnTakeDamage += ApplyDamage;
-        pickUpMedkit += GetMedkit; 
+        pickUpMedkit += GetMedkit;
+        pickUpItemSize += GetItem;
     }
 
     private void OnDisable()
     {
         OnTakeDamage -= ApplyDamage;
         pickUpMedkit -= GetMedkit;
+        pickUpItemSize -= GetItem;
     }
 
 
@@ -301,7 +310,7 @@ public class FirstPersonController : MonoBehaviour
         if (!IsSprinting && currentStam < maxStam && regeneratingStam == null)
         {
 
-            regeneratingStam = StartCoroutine(regenStam());
+            regeneratingStam = StartCoroutine(RegenStam());
         }
 
     }
@@ -384,15 +393,17 @@ public class FirstPersonController : MonoBehaviour
     private void ApplyDamage(float dmg)
     {
         currentHealth -= dmg;
-
         if(currentHealth <= 0)
            KillPLayer();
     }
 
+    private void GetItem(float ItemAmount)
+    {
+        currentItems += ItemAmount;
+    }
+
     private void GetMedkit(float medkitAmount)
     {
-        if (currentMedkit >= medkitMax)
-            return;
         currentMedkit += medkitAmount;
     }
     private void KillPLayer()
@@ -550,7 +561,7 @@ public class FirstPersonController : MonoBehaviour
 
 
     }
-    private IEnumerator regenStam()
+    private IEnumerator RegenStam()
     {
         yield return new WaitForSeconds(timeBeforeStamRegenStarts);
         WaitForSeconds timeToWait = new WaitForSeconds(stamTimeIncrement);
