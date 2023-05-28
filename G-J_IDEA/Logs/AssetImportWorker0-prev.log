@@ -15,7 +15,7 @@ D:/shit I made/2023/James fuck james/Repo/G-J-IDEA/G-J_IDEA
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55618
+57307
 Successfully changed project path to: D:/shit I made/2023/James fuck james/Repo/G-J-IDEA/G-J_IDEA
 D:/shit I made/2023/James fuck james/Repo/G-J-IDEA/G-J_IDEA
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ D:/shit I made/2023/James fuck james/Repo/G-J-IDEA/G-J_IDEA
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [16776] Host "[IP] 192.168.0.149 [Port] 0 [Flags] 2 [Guid] 58779273 [EditorId] 58779273 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JTPSL42) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [29504] Host "[IP] 192.168.0.149 [Port] 0 [Flags] 2 [Guid] 4102526850 [EditorId] 4102526850 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JTPSL42) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [16776] Host "[IP] 192.168.0.149 [Port] 0 [Flags] 2 [Guid] 58779273 [EditorId] 58779273 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JTPSL42) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [29504] Host "[IP] 192.168.0.149 [Port] 0 [Flags] 2 [Guid] 4102526850 [EditorId] 4102526850 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JTPSL42) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 115.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 135.86 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.25f1 (68ef2c4f8861)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56884
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007624 seconds.
+Registered in 0.009754 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 121.09 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 156.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.611 seconds
+- Completed reload, in  0.772 seconds
 Domain Reload Profiling:
-	ReloadAssembly (611ms)
-		BeginReloadAssembly (81ms)
+	ReloadAssembly (772ms)
+		BeginReloadAssembly (92ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (436ms)
-			LoadAssemblies (78ms)
+		EndReloadAssembly (566ms)
+			LoadAssemblies (89ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (86ms)
+			SetupTypeCache (124ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (283ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (351ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (121ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (115ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
+				RefreshPlugins (156ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (136ms)
+				ProcessInitializeOnLoadMethodAttributes (45ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006059 seconds.
+Registered in 0.008230 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\shit I made\2023\James fuck james\Repo\G-J-IDEA\G-J_IDEA\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\shit I made\2023\James fuck james\Repo\G-J-IDEA\G-J_IDEA\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 130.79 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 180.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.361 seconds
+- Completed reload, in  1.750 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1362ms)
-		BeginReloadAssembly (115ms)
+	ReloadAssembly (1751ms)
+		BeginReloadAssembly (117ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (1144ms)
-			LoadAssemblies (105ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1535ms)
+			LoadAssemblies (107ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (280ms)
+			SetupTypeCache (300ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (72ms)
-			SetupLoadedEditorAssemblies (667ms)
+			RebuildScriptCaches (76ms)
+			SetupLoadedEditorAssemblies (1023ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (131ms)
-				BeforeProcessingInitializeOnLoad (119ms)
-				ProcessInitializeOnLoadAttributes (241ms)
-				ProcessInitializeOnLoadMethodAttributes (161ms)
-				AfterProcessingInitializeOnLoad (10ms)
+				RefreshPlugins (180ms)
+				BeforeProcessingInitializeOnLoad (173ms)
+				ProcessInitializeOnLoadAttributes (399ms)
+				ProcessInitializeOnLoadMethodAttributes (249ms)
+				AfterProcessingInitializeOnLoad (15ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 1.18 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5934 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 53 unused Assets / (3.9 MB). Loaded Objects now: 6369.
-Memory consumption went from 273.5 MB to 269.6 MB.
-Total: 5.518000 ms (FindLiveObjects: 0.867100 ms CreateObjectMapping: 0.161900 ms MarkObjects: 3.188300 ms  DeleteObjects: 1.299000 ms)
+Unloading 5936 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 53 unused Assets / (3.9 MB). Loaded Objects now: 6371.
+Memory consumption went from 274.9 MB to 271.0 MB.
+Total: 5.336200 ms (FindLiveObjects: 0.565200 ms CreateObjectMapping: 0.585200 ms MarkObjects: 3.040700 ms  DeleteObjects: 1.143800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -163,58 +163,506 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 85895.635908 seconds.
-  path: Assets/Mats/Test Scene Mat
-  artifactKey: Guid(1a3f99b9298fa2844ad595e7fc29af4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mats/Test Scene Mat using Guid(1a3f99b9298fa2844ad595e7fc29af4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6c56759c94b950b102fe8b97ebd698f') in 0.020836 seconds 
+  Time since last request: 92249.509535 seconds.
+  path: Assets/Mats/Test Scene Mat/New Material 1.mat
+  artifactKey: Guid(bb7dca6765e751348aa12614524d368d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mats/Test Scene Mat/New Material 1.mat using Guid(bb7dca6765e751348aa12614524d368d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5221e7a05e0d338091638abdefdcd4c') in 0.715559 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.054591 seconds.
-  path: Assets/Mats/Test Scene Mat/Concrete 1.mat
-  artifactKey: Guid(6b2159104d247d04b9e83039b7402177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mats/Test Scene Mat/Concrete 1.mat using Guid(6b2159104d247d04b9e83039b7402177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6667cf716e69f7c11af3660b98ec724') in 0.739074 seconds 
+  Time since last request: 0.000056 seconds.
+  path: Assets/Mats/Test Scene Mat/medbox.mat
+  artifactKey: Guid(bdef366c003fa414b892d58f93c16587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mats/Test Scene Mat/medbox.mat using Guid(bdef366c003fa414b892d58f93c16587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e90520b1eda5eb56436f64af7fe98837') in 0.042170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.627849 seconds.
+  path: Assets/Shaders/New HDRenderPipelineAsset.asset
+  artifactKey: Guid(6f0a0e1bf44345f4d8c0bb2170794ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/New HDRenderPipelineAsset.asset using Guid(6f0a0e1bf44345f4d8c0bb2170794ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f87e694e39ab8675a4723fc06bcee4e') in 0.009397 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 353.044387 seconds.
+  path: Assets/Models/medbox (1).prefab
+  artifactKey: Guid(29d1097690bfa5c4f8338de719c18097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/medbox (1).prefab using Guid(29d1097690bfa5c4f8338de719c18097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b824c1dcb33558e04077c1026d22330e') in 0.035609 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.215272 seconds.
+  path: Assets/RoomPieces/Concrete_DoorWall.fbx
+  artifactKey: Guid(0a1cd5d0fed0d114a848e2560a630e1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPieces/Concrete_DoorWall.fbx using Guid(0a1cd5d0fed0d114a848e2560a630e1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49d67c5de577d66fba6dedfe7985540f') in 0.137116 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/RoomPieces/Concrete_WideWall2.prefab
+  artifactKey: Guid(0ae6c251d8310cd4a973efcdc91f1f83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPieces/Concrete_WideWall2.prefab using Guid(0ae6c251d8310cd4a973efcdc91f1f83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d86ed7e6d058a51cd206ce876dbe201') in 0.021316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/RoomPieces/Concrete_SqWall2.fbx
+  artifactKey: Guid(8db45accc95dc5e4db3b65ed1185f447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPieces/Concrete_SqWall2.fbx using Guid(8db45accc95dc5e4db3b65ed1185f447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecb350cf0762ace65d40b9b2a037a9c5') in 0.047201 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/RoomPieces/Concrete_WideWall.prefab
+  artifactKey: Guid(a64c2ba78aa3fa04ba1ef23d4eeeab58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPieces/Concrete_WideWall.prefab using Guid(a64c2ba78aa3fa04ba1ef23d4eeeab58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a23645f93bdec27d82a240ff9febe7ed') in 0.015658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.302561 seconds.
+  path: Assets/Scenes/ObjTest.unity
+  artifactKey: Guid(6f63afa3ae8cf4d40a6e2a9feb11a699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/ObjTest.unity using Guid(6f63afa3ae8cf4d40a6e2a9feb11a699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ada2a855ea9ec69a4ed68b7b34518fa2') in 0.007058 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 174.828465 seconds.
+  path: Assets/HDRPDefaultResources/HDRenderPipelineGlobalSettings.asset
+  artifactKey: Guid(14964b45d1faffc40afa4be58c929d1c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/HDRPDefaultResources/HDRenderPipelineGlobalSettings.asset using Guid(14964b45d1faffc40afa4be58c929d1c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '54eb978f6b5411388e0ad4f9eaeee533') in 0.104408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-020.ogg
+  artifactKey: Guid(958d9939e2c6f604eb95d5562224d369) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-020.ogg using Guid(958d9939e2c6f604eb95d5562224d369) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b2b35b65916746308339261b54b49ca7') in 0.125451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Scenes/ObjTest.unity
+  artifactKey: Guid(6f63afa3ae8cf4d40a6e2a9feb11a699) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scenes/ObjTest.unity using Guid(6f63afa3ae8cf4d40a6e2a9feb11a699) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ea96766a73afa7c584e002f0f4fce41c') in 0.009623 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000048 seconds.
-  path: Assets/Mats/Test Scene Mat/New Material.mat
-  artifactKey: Guid(c86fa0481aa7c484e95b7f0aabedd39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mats/Test Scene Mat/New Material.mat using Guid(c86fa0481aa7c484e95b7f0aabedd39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6701e1f38085a8afe68ad9ef2c385541') in 0.019834 seconds 
+  path: Assets/Audio/floorSounds/Default/Steps_floor-003.ogg
+  artifactKey: Guid(b0b51f4443887a3489278970dbd6e1b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-003.ogg using Guid(b0b51f4443887a3489278970dbd6e1b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a973f91efb8e1dc7ccfe459b79200786') in 0.068665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Textures/Concrete.jpg
+  artifactKey: Guid(3d3b5572ac75ac2468af1946ca012e51) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Textures/Concrete.jpg using Guid(3d3b5572ac75ac2468af1946ca012e51) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7366f85d39f4b1b44e4a644387be4b98') in 0.064098 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-007.ogg
+  artifactKey: Guid(e8fa6212d1fc58646a3adbba255be3f5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-007.ogg using Guid(e8fa6212d1fc58646a3adbba255be3f5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fb552804730789fd2d292cc224ebe0c2') in 0.062551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-001.ogg
+  artifactKey: Guid(adab547a01918154e8debde10a01ec57) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-001.ogg using Guid(adab547a01918154e8debde10a01ec57) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0c0e223f9b97d4f3ddee1f8887eb1218') in 0.077650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Scripts/FirstPersonController.cs
+  artifactKey: Guid(29da5da57d38db745aa2b417fa67d80b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/FirstPersonController.cs using Guid(29da5da57d38db745aa2b417fa67d80b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '049c819c141059391fd0124e415e928f') in 0.016913 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Mats/Test Scene Mat/WideConcrete2.mat
+  artifactKey: Guid(aa25b6d1013ff464d952843629cc0b12) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Mats/Test Scene Mat/WideConcrete2.mat using Guid(aa25b6d1013ff464d952843629cc0b12) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '083173afd9772ed3839cd2edc28b2754') in 0.048760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/RoomPieces/Concrete_SqWall.prefab
+  artifactKey: Guid(56ee74bd526bde5408f311e455451336) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/RoomPieces/Concrete_SqWall.prefab using Guid(56ee74bd526bde5408f311e455451336) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'df94e1a9d39e6fcc535309fbe8606ac1') in 0.017280 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Audio/floorSounds/Tiles/Steps_tiles-016.ogg
+  artifactKey: Guid(33d24f2e1e7f52442b7f8921fd7ab334) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Tiles/Steps_tiles-016.ogg using Guid(33d24f2e1e7f52442b7f8921fd7ab334) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e73baa78625c8d4e4f72d5ccff7a7189') in 0.066878 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-016.ogg
+  artifactKey: Guid(280fc137b5eb5cd47be8fafa53f079aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-016.ogg using Guid(280fc137b5eb5cd47be8fafa53f079aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e73bf32a1c3ab3498c9a682f3e52010e') in 0.063866 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000045 seconds.
-  path: Assets/Mats/Test Scene Mat/Metal.mat
-  artifactKey: Guid(d834a9e94ee57774aae587506fbd993e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mats/Test Scene Mat/Metal.mat using Guid(d834a9e94ee57774aae587506fbd993e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18414daa3610f34a1b26276e76ed62d4') in 0.559713 seconds 
+  path: Assets/Audio/floorSounds/Tiles/Steps_tiles-004.ogg
+  artifactKey: Guid(9e9b03f16940686479c53ec0f00306c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Tiles/Steps_tiles-004.ogg using Guid(9e9b03f16940686479c53ec0f00306c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bf054418e862b01d127c81fe2eb229cf') in 0.073602 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 224.233123 seconds.
-  path: Assets/Textures/medbox.jpg
-  artifactKey: Guid(7406a90613383924d8d24ea6c6452a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/medbox.jpg using Guid(7406a90613383924d8d24ea6c6452a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb44515453c686b80d8e19062680e589') in 0.044559 seconds 
+  Time since last request: 0.000052 seconds.
+  path: Assets/Audio/InteractionSounds/PickUpSound.wav
+  artifactKey: Guid(59e0ed944977b374690470db895c35d5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/InteractionSounds/PickUpSound.wav using Guid(59e0ed944977b374690470db895c35d5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4d49846e72aecf2f49ec4da5e4d0dcda') in 0.039568 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Textures/wood.jpg
-  artifactKey: Guid(5eb6fcda1e12f634cb4a58276215a2b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/wood.jpg using Guid(5eb6fcda1e12f634cb4a58276215a2b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17171ebc2889667140bae643ee3df8f0') in 0.013831 seconds 
+  Time since last request: 0.000030 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-017.ogg
+  artifactKey: Guid(321ea456a918937408355d36deec4a4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-017.ogg using Guid(321ea456a918937408355d36deec4a4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dd69f697703ac89e8d6bff6a5e8e7964') in 0.062400 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-015.ogg
+  artifactKey: Guid(c58132f8b4fe6c34bb5dbb266ac2108e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-015.ogg using Guid(c58132f8b4fe6c34bb5dbb266ac2108e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '090f433131a1c9f0bf429578e8b380be') in 0.061753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-008.ogg
+  artifactKey: Guid(c977a6f7f406e8248a85c91a998bcaa7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-008.ogg using Guid(c977a6f7f406e8248a85c91a998bcaa7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ea1307273f8fb90cf3eb773131217ffb') in 0.062147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-005.ogg
+  artifactKey: Guid(af9e0a31189f9754f8a03f4d45422dec) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-005.ogg using Guid(af9e0a31189f9754f8a03f4d45422dec) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1643a950c24e31762a0b9b3ab60a34a3') in 0.062022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-013.ogg
+  artifactKey: Guid(056a82f2de56a084e9d74a38fc314b32) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-013.ogg using Guid(056a82f2de56a084e9d74a38fc314b32) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd5978ed7af39f5e04a16d16b58c8eaa7') in 0.061458 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Audio/floorSounds/Tiles/Steps_tiles-013.ogg
+  artifactKey: Guid(57ed570031596364ea5a2b99e9b09765) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Tiles/Steps_tiles-013.ogg using Guid(57ed570031596364ea5a2b99e9b09765) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e3aa64fb9655de897bef1b9f0ef6c64a') in 0.071186 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-019.ogg
+  artifactKey: Guid(01eb1ce4b240ecf4bb91704dc77eaa40) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-019.ogg using Guid(01eb1ce4b240ecf4bb91704dc77eaa40) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a0b1df1dfb3a661da094702e51660b8f') in 0.062124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-018.ogg
+  artifactKey: Guid(8576240dbfdd8a34db6a40576699890a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-018.ogg using Guid(8576240dbfdd8a34db6a40576699890a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fa1a364b8b7bd442d28d68749550e08d') in 0.083032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-004.ogg
+  artifactKey: Guid(895a3772c468169428250bab55dadadc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-004.ogg using Guid(895a3772c468169428250bab55dadadc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8a1f1b737566f603691694367df4de77') in 0.062477 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Textures/WideConcrete.jpg
+  artifactKey: Guid(ecef938c43aaa7a4594d8c10f862917b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Textures/WideConcrete.jpg using Guid(ecef938c43aaa7a4594d8c10f862917b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5fa452535aec16bcc5459802ad424d4c') in 0.025612 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-002.ogg
+  artifactKey: Guid(f86ae1188d61026409d46caa61a0c564) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-002.ogg using Guid(f86ae1188d61026409d46caa61a0c564) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b519a98d3bcf4f9293fea32c20a5b4a7') in 0.066099 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Textures/Test Scene Mat/Test Green.mat
+  artifactKey: Guid(5e11e77c817a2824180443bec589e4e8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Textures/Test Scene Mat/Test Green.mat using Guid(5e11e77c817a2824180443bec589e4e8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4b12f3a078ca69fab0a16cfda9199e4a') in 0.013690 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-014.ogg
+  artifactKey: Guid(15314d33757cb9845a4e2f7336083002) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-014.ogg using Guid(15314d33757cb9845a4e2f7336083002) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a086f7ffede7b34114412a4d74b5ced3') in 0.065686 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/RoomPieces/Concrete_WideWall.prefab
+  artifactKey: Guid(a64c2ba78aa3fa04ba1ef23d4eeeab58) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/RoomPieces/Concrete_WideWall.prefab using Guid(a64c2ba78aa3fa04ba1ef23d4eeeab58) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0369b45a5e8d0e1e44909559e56bad49') in 0.011300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Audio/HealSounds/Bandage Sound.wav
+  artifactKey: Guid(e4fe79f3409500642aca2730c35e83a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/HealSounds/Bandage Sound.wav using Guid(e4fe79f3409500642aca2730c35e83a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e6f87f8d14a71b13dda355b841c3881e') in 0.062965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-001.ogg
+  artifactKey: Guid(b595438d97691b14f994e35229abe95f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-001.ogg using Guid(b595438d97691b14f994e35229abe95f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '209ac9c1fd5462c1dbcae900d62e9593') in 0.066871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Audio/floorSounds/Tiles/Steps_tiles-006.ogg
+  artifactKey: Guid(65b474c95668e4d46a79b14a648611a5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Tiles/Steps_tiles-006.ogg using Guid(65b474c95668e4d46a79b14a648611a5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0d105e20b3f027c866dacf2beae7e951') in 0.074836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-014.ogg
+  artifactKey: Guid(0a25e51e0e6ab144cb3c38325e8a7eed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-014.ogg using Guid(0a25e51e0e6ab144cb3c38325e8a7eed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2bec38627c44b4749c6b5e223eb4db84') in 0.066981 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Textures/Test Scene Mat/New Lighting Settings.lighting
+  artifactKey: Guid(831fbf1ba58836346836b132c34c33eb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Textures/Test Scene Mat/New Lighting Settings.lighting using Guid(831fbf1ba58836346836b132c34c33eb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '04302c5c5897d3b9c3d323ece09fd761') in 0.021274 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-006.ogg
+  artifactKey: Guid(a92c4f1fe87b5534a9d5b6009f8a1097) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-006.ogg using Guid(a92c4f1fe87b5534a9d5b6009f8a1097) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0a3a52fb4388cc9bcd1f7d06c5aacf81') in 0.061722 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-004.ogg
+  artifactKey: Guid(3e2d1f3e3f1c6c043a46d2d2fbb21db2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-004.ogg using Guid(3e2d1f3e3f1c6c043a46d2d2fbb21db2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '235b3775524d9cbf40a4d383cb2cee9d') in 0.063510 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000034 seconds.
-  path: Assets/Textures/WideConcrete.jpg
-  artifactKey: Guid(ecef938c43aaa7a4594d8c10f862917b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/WideConcrete.jpg using Guid(ecef938c43aaa7a4594d8c10f862917b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87b9f09732aaf71fad3d6f6db369b517') in 0.038983 seconds 
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-008.ogg
+  artifactKey: Guid(4550477b84de88340b783a2b79fad0a5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-008.ogg using Guid(4550477b84de88340b783a2b79fad0a5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'da5ea1350feb1eb65e86d2c3095dedea') in 0.064049 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.763675 seconds.
-  path: Assets/Textures/Test Scene Mat/Test Green.mat
-  artifactKey: Guid(5e11e77c817a2824180443bec589e4e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/Test Scene Mat/Test Green.mat using Guid(5e11e77c817a2824180443bec589e4e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea403ba0cba6d33d8d42bdbc56fb6077') in 0.017372 seconds 
+  Time since last request: 0.000060 seconds.
+  path: Assets/Models/medbox (1).prefab
+  artifactKey: Guid(29d1097690bfa5c4f8338de719c18097) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Models/medbox (1).prefab using Guid(29d1097690bfa5c4f8338de719c18097) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bd8cb3f947b3453a0cafde15f458c4cd') in 0.013178 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 23.978905 seconds.
-  path: Assets/HDRPDefaultResources/HDRenderPipelineGlobalSettings.asset
-  artifactKey: Guid(14964b45d1faffc40afa4be58c929d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HDRPDefaultResources/HDRenderPipelineGlobalSettings.asset using Guid(14964b45d1faffc40afa4be58c929d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7e3d9042c7e9736c7cc2f78fd53a43b') in 0.007961 seconds 
+  Time since last request: 0.000042 seconds.
+  path: Assets/Scripts/Door.cs
+  artifactKey: Guid(ea001bef1ed708547aa61e9d47e5b0f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Door.cs using Guid(ea001bef1ed708547aa61e9d47e5b0f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e7c7c1362a763115fdb25e07ef3d64b1') in 0.009096 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Textures/Test Scene Mat/Test red.mat
+  artifactKey: Guid(69baa0a126de1d3469e4cf19d29f13c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Textures/Test Scene Mat/Test red.mat using Guid(69baa0a126de1d3469e4cf19d29f13c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3c2ccad65086e9a4129fe8114aa14b43') in 0.016927 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Mats/Test Scene Mat/New Material 1.mat
+  artifactKey: Guid(bb7dca6765e751348aa12614524d368d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Mats/Test Scene Mat/New Material 1.mat using Guid(bb7dca6765e751348aa12614524d368d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c57872b647b17e0e39d7ea55ef962fd2') in 0.014933 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-018.ogg
+  artifactKey: Guid(e3df29e67bde257438ca33707adb5455) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-018.ogg using Guid(e3df29e67bde257438ca33707adb5455) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd2a4f52e6bbcf1d7c9336faee780cdfc') in 0.068212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-004.ogg
+  artifactKey: Guid(1d87a6bf4f572874d9fc075e93bd5fc6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-004.ogg using Guid(1d87a6bf4f572874d9fc075e93bd5fc6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '85ca8b452def503b0a5ddaddd8bb4227') in 0.066023 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Scripts/Interactable.cs
+  artifactKey: Guid(31f8b1ccccd942c409f9f4f8348badc3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Interactable.cs using Guid(31f8b1ccccd942c409f9f4f8348badc3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1d97cb110da253ca5a4232b18266d74d') in 0.010389 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-017.ogg
+  artifactKey: Guid(ed597d00380fcd94193ee8bc48958ddc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-017.ogg using Guid(ed597d00380fcd94193ee8bc48958ddc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '662aa0c4749beedcb9d2ef19fbaedf26') in 0.060461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Scripts/DamageTest.cs
+  artifactKey: Guid(6febc39571242514bae7b430bb99ade1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/DamageTest.cs using Guid(6febc39571242514bae7b430bb99ade1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1bb749836670ecf4bf74f7f02bc30d41') in 0.011030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-017.ogg
+  artifactKey: Guid(83c94e117ee2fe248830f6d10421634f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-017.ogg using Guid(83c94e117ee2fe248830f6d10421634f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '10f4564b5bd3de9377be6318e4df508b') in 0.065936 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-009.ogg
+  artifactKey: Guid(5de13d37126769b46a74660fb30370cd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-009.ogg using Guid(5de13d37126769b46a74660fb30370cd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '85c60b579e1cb40dc9e6d3113d6585b4') in 0.069568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Scripts/MedkitPickup.cs
+  artifactKey: Guid(ca1837eb4f0fbf342aad582382eb4ba0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/MedkitPickup.cs using Guid(ca1837eb4f0fbf342aad582382eb4ba0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '52dc2ed1ae178271face774e66b05aa5') in 0.013111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-006.ogg
+  artifactKey: Guid(50e347b5e05c7fe43840d432a505bfab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-006.ogg using Guid(50e347b5e05c7fe43840d432a505bfab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b7a88b46cd5d056141d0cd64aa4348f9') in 0.064814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Models/medbox.prefab
+  artifactKey: Guid(4fe0b032d5398744faf0f80940363c38) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Models/medbox.prefab using Guid(4fe0b032d5398744faf0f80940363c38) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '077eddb9a1821051ae5908d4ef329522') in 0.014944 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-018.ogg
+  artifactKey: Guid(66753e863316e3a46a39b1631c3004ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-018.ogg using Guid(66753e863316e3a46a39b1631c3004ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0acd94907530b38346609c30706df13a') in 0.063884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Audio/floorSounds/Tiles/Steps_tiles-019.ogg
+  artifactKey: Guid(99d89ddee9250944299aff2aae284d96) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Tiles/Steps_tiles-019.ogg using Guid(99d89ddee9250944299aff2aae284d96) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '41ff62100721be4164191396259a7221') in 0.061652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Mats/Test Scene Mat/Materials/Concrete2.mat
+  artifactKey: Guid(e1f2125e1ec5d0744809c2f9473dbd58) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Mats/Test Scene Mat/Materials/Concrete2.mat using Guid(e1f2125e1ec5d0744809c2f9473dbd58) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8e8acbb8b1c5739bbc6bd6f56e9315a9') in 0.029025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-013.ogg
+  artifactKey: Guid(a7f15b246c1c55741b7f0f8234aed2b5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-013.ogg using Guid(a7f15b246c1c55741b7f0f8234aed2b5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '26b1599359200ab07a348bb8085665c4') in 0.064105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Audio/floorSounds/Tiles/Steps_tiles-010.ogg
+  artifactKey: Guid(9d9d6ed2b85c9d24aac6abeb777eba5d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Tiles/Steps_tiles-010.ogg using Guid(9d9d6ed2b85c9d24aac6abeb777eba5d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0796bd73778bc1101ac04f2f716abd22') in 0.062226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-003.ogg
+  artifactKey: Guid(9b9181b82ec7a4847adf014108798033) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-003.ogg using Guid(9b9181b82ec7a4847adf014108798033) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9d78e2898eac70947d00a0a50c3c30b3') in 0.063959 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Audio/floorSounds/Tiles/Steps_tiles-009.ogg
+  artifactKey: Guid(187881c09d48d364094de090730d31aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Tiles/Steps_tiles-009.ogg using Guid(187881c09d48d364094de090730d31aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '890b013370ee8ed4cb031bd83122840f') in 0.066780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-003.ogg
+  artifactKey: Guid(4ee925dc159b87948a2ce0add5defab1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-003.ogg using Guid(4ee925dc159b87948a2ce0add5defab1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd50b1dc1a52776be21bd68ba86a19ebc') in 0.063348 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-006.ogg
+  artifactKey: Guid(09141fad7a6fe614f8f45a7d951d4039) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-006.ogg using Guid(09141fad7a6fe614f8f45a7d951d4039) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7dc6f92012e44999d837d0b2a66a1e19') in 0.069288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-011.ogg
+  artifactKey: Guid(3990fb4048635ab4d9f6e78bd044f7fb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-011.ogg using Guid(3990fb4048635ab4d9f6e78bd044f7fb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ce7c4c19f24bd894cf324733b7760040') in 0.062776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Audio/floorSounds/Wood/Steps_wood-016.ogg
+  artifactKey: Guid(be6fa99cde3d53946ac9ab91b1d76683) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Wood/Steps_wood-016.ogg using Guid(be6fa99cde3d53946ac9ab91b1d76683) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1cac3d1731e45eaa865884d571adadcf') in 0.064523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Audio/floorSounds/Default/Steps_floor-016.ogg
+  artifactKey: Guid(97e2e7ef7fddd514588e91dfad5bcc43) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Default/Steps_floor-016.ogg using Guid(97e2e7ef7fddd514588e91dfad5bcc43) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c1ee4edebf2bfd4e4a0e8169fad3e0cf') in 0.061796 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Audio/floorSounds/Gravel/Steps_gravel-014.ogg
+  artifactKey: Guid(2f19b5156e39ac444a9504a0577b09cb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Audio/floorSounds/Gravel/Steps_gravel-014.ogg using Guid(2f19b5156e39ac444a9504a0577b09cb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ff64652343b339207080f6a3b94be4ff') in 0.068210 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Models/MedBoxIdle.anim
+  artifactKey: Guid(d75c0bea25e764f439bbe022f158f97b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Models/MedBoxIdle.anim using Guid(d75c0bea25e764f439bbe022f158f97b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ae2e0a86237d3c7485ed04eb769ece46') in 0.025212 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
